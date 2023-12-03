@@ -7,20 +7,31 @@ body{
     box-sizing: border-box;
 }
 
+section#login{
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
+}
+
 @media screen and (min-width: 360px) and (max-width: 768px){ /*Celular*/
     section#login{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        margin: auto;
-        width: 90vw;
+        transition: 1s;
+        width: 360px;
         border: 1px solid black;
         border-radius: 20px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     }
     
-    #imagem img{
+    div#imagem{
+        background-image: url(../imagens/maldivas.jpg);
+        background-position: 100% bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
         width: 100%;
+        height: 300px;
         border-radius: 20px 20px 0px 0px;
         box-shadow: 1px 1px 5px black;
     }
@@ -49,7 +60,7 @@ body{
 
     input{
         padding: 5px;
-        width: 60vw;
+        width: 100%;
     }
 
     input.botoes{
@@ -59,22 +70,103 @@ body{
         border-radius: 20px;
     }
 
+    div#esqueci{
+        text-align: right;
+        margin: 10px 0;
+    }
+
+    div#esqueci a{
+        color: white;
+        font-size: 0.8em;
+    }
+
+
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px){/*Tablet*/
     #login{
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 80%;
         border: 1px solid black;
         border-radius: 20px;
-        padding: 20px;
         background-color: rgba(255, 255, 255, 0.233);
         margin: auto;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
     }
-    
-    #login img{
+
+    div#imagem{
+        background-image: url(../imagens/maldivas.jpg);
+        background-position: bottom center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 70%;
+        border-radius: 20px 0 0 20px;
+    }
+
+    div#formulario{
+        padding: 20px;
+        background-color: #4c008a;
+        border-radius: 0 20px 20px 0;
+        color: white;
+        width: 50%;
+    }
+
+    div.form input#iemail,
+    div.form input#ipass{
+        display: block;
+        padding: 10px;
+        margin: 10px 0;
         width: 90%;
     }
 
+    div.form label{
+        display: flex;
+        align-items: center;
+    }
+
+    div.form label span{
+        font-size: 1.4em;
+        padding: 0 10px;
+    }
+
+    div#botoes{
+        display: flex;
+        justify-content: center;
+    }
+
+    div#botoes input{
+        margin: 15px 5px;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        transition: .4s;
+    }
+
+    div#botoes input:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 10px 0px white;
+        background-color: white;
+        color: #4c008a;
+    }
+
+    div#esqueci{
+        text-align: right;
+    }
+
+    div#esqueci a{
+        color: white;
+        font-size: 0.8em;
+    }
 
 }
 
@@ -90,11 +182,20 @@ body{
         border: 2px solid white;
         border-radius: 20px;
         background-color: rgba(255, 255, 255, 0.233);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
     }
 
 
     #imagem{
         order: 2;
+        width: 100%;
+        background-image: url(../imagens/maldivas.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        border-radius: 0px 20px 20px 0px;
     }
 
     #formulario{
@@ -181,15 +282,40 @@ body{
         box-shadow: 0px 0px 10px black;
     }
 
+    div#esqueci{
+        text-align: right;
+    }
 
+    div#esqueci a{
+        color: white;
+        font-size: 0.8em;
+    }
+
+}
+
+footer{
+    display: block;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 footer h1{
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translate(-50%);
     font-size: .8em;
     color: aliceblue;
+    margin: 2px;
+    padding: 0px;
 }
 
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer div#redes a img{
+    width: 25px;
+    padding: 0 10px;
+    border-radius: 100%;
+}
